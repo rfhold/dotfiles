@@ -1,7 +1,12 @@
 return {
 	require("plugins.which-key"),
 	require("plugins.cpm"),
+	require("plugins.harpoon"),
+	require("plugins.dap"),
 	require("plugins.neo-tree"),
+	require("plugins.oil"),
+	require("plugins.telescope"),
+	require("plugins.tree-sitter"),
 	require("plugins.web-devicons"),
 	require("plugins.conform"),
 	require("plugins.todo-comments"),

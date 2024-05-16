@@ -6,7 +6,7 @@ tap "oven-sh/bun"
 tap "xo/xo"
 tap "tako8ki/tap"
 
-# TUI
+# Terminal
 brew "lazydocker"
 brew "neovim"
 brew "fzf"
@@ -14,9 +14,10 @@ brew "k9s"
 brew "htop"
 brew "tmux"
 brew "gdu"
-brew "idoavrah/homebrew/gobang"
+brew "tako8ki/tap/gobang"
 brew "lazygit"
 brew "idoavrah/homebrew/tftui"
+brew "tree-sitter"
 
 # MacOS
 brew "dockutil"
@@ -63,11 +64,5 @@ brew "oven-sh/bun/bun" # Bun.sh NodeJs runtime and package manager
 
 # Applications
 cask "alacritty"
-cask "slack"
-cask "element"
 cask "appgrid"
-cask "spotify"
-cask "linearmouse"
 
-# Mac App Store
-mas "Xcode", id: 497799835

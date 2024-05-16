@@ -1,23 +1,48 @@
-vim.opt.number = true
-vim.opt.relativenumber = true
+local opt = vim.opt
+local g = vim.g
 
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+----- Interesting Options -----
 
-vim.opt.timeoutlen = 300
+-- You have to turn this one on :)
+opt.inccommand = "split"
 
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+-- Best search settings :)
+opt.smartcase = true
+opt.ignorecase = true
 
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+----- Personal Preferences -----
+opt.number = true
+opt.relativenumber = true
 
-vim.opt.undofile = true
-vim.opt.breakindent = true
+opt.splitbelow = true
+opt.splitright = true
 
-vim.opt.showmode = false
+opt.signcolumn = "yes"
+opt.shada = { "'10", "<0", "s10", "h" }
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+opt.clipboard = "unnamedplus"
 
-vim.opt.mouse = ""
+-- Don't have `o` add a comment
+opt.formatoptions:remove("o")
+opt.listchars = { trail = "·", nbsp = "␣" }
+
+opt.timeoutlen = 300
+
+opt.splitright = true
+opt.splitbelow = true
+
+opt.ignorecase = true
+opt.smartcase = true
+
+opt.undofile = true
+opt.breakindent = true
+
+opt.showmode = false
+
+g.mapleader = " "
+g.maplocalleader = " "
+vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
+opt.mouse = ""
+
+opt.shiftwidth = 4
+opt.tabstop = 4
