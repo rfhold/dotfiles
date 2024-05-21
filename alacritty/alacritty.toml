@@ -46,3 +46,7 @@ italic.family = "MesloLGS NF"
 bold_italic.family = "MesloLGS NF"
 
 size = 15.0
+
+[window]
+option_as_alt = "OnlyLeft"
+

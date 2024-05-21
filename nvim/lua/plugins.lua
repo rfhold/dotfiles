@@ -17,4 +17,5 @@ return {
 	require("plugins.tmux-navigation"),
 	require("plugins.telescope"),
 	require("plugins.lsp"),
+	require("plugins.gitsigns"),
 }

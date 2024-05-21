@@ -8,5 +8,5 @@ local i = ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
 
 ls.add_snippets("go", {
-	s("err", fmt('if err != nil return fmt.Errorf("{}. err: %v", err){}', { i(1), i(0) })),
+	s("ife", fmt('if err != nil return fmt.Errorf("{}. err: %v", err){}', { i(1), i(0) })),
 })
