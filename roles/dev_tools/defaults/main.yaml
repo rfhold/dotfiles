@@ -1,0 +1,52 @@
+---
+formula:
+  # Terminal
+  - name: homebrew/cask/alacritty
+  - name: lazydocker
+  - name: neovim
+  - name: fzf
+  - name: k9s
+  - name: htop
+  - name: tmux
+  - name: gdu
+  - name: tako8ki/tap/gobang
+  - name: lazydocker
+  - name: idoavrah/homebrew/tftui
+  - name: tree-sitter
+  # Cli
+  - name: jq
+  - name: rsync
+  - name: wget
+  - name: curl
+  - name: watch
+  - name: xz
+  - name: lsd
+  - name: bat
+  # Containers
+  - name: colima
+  - name: homebrew/core/docker
+  - name: helm
+  - name: kind
+  - name: kubernetes-cli
+  - name: lima
+  # Environment
+  - name: bash
+  - name: zsh
+  - name: neofetch
+  - name: gh
+  - name: git
+  # Devops
+  - name: pulumi
+  - name: tfenv
+  - name: ansible
+  # SDK
+  - name: nvm
+  - name: rustup
+  - name: golang
+  - name: oven-sh/bun/bun
+base_repository_path: "$HOME"
+git_repositories:
+  'rfhold/docs':
+    remote_origin: "git@gitlab.com:rfhold/docs.git"
+  'rfhold/operations':
+    remote_origin: "git@gitlab.com:rfhold/operations.git"

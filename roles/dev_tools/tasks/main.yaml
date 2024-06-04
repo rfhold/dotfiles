@@ -1,0 +1,19 @@
+---
+- name: Ensure base repository path exists
+  file:
+    path: "{{ base_repository_path }}"
+    state: directory
+
+- name: Git Repositories
+  include_tasks: repositories.yaml
+  vars:
+    repo_base_path: "{{ base_repository_path }}/{{ repo.key }}"
+    remote_origin: "{{ repo.value.remote_origin }}"
+  loop: "{{ git_repositories | dict2items }}"
+  loop_control:
+    loop_var: repo
+
+- name: Homebrew Formula
+  import_tasks: homebrew.yaml
+  when: ansible_os_family == 'Darwin'
+

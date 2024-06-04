@@ -1,0 +1,12 @@
+dev_services:
+  hosts:
+    rholden.dev:
+    github.com:
+    gitlab.com:
+
+hosts:
+  localhost:
+   vars:
+     ansible_connection: local
+     ansible_python_interpreter: "{{ansible_playbook_python}}"
+

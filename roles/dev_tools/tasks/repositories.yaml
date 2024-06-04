@@ -1,0 +1,30 @@
+---
+- name: Ensure repository directory exists
+  file:
+    path: "{{ repo_base_path }}"
+    state: directory
+
+- name: Check if repo directory has been initialized
+  ansible.builtin.stat:
+    path: "{{ repo_base_path }}/.git"
+  register: git_stat
+
+- name: Initialize git repository
+  command: git init
+  args:
+    chdir: "{{ repo_base_path }}"
+  when: not git_stat.stat.exists
+
+- name: Check if git remote already exists
+  command: git remote -v
+  args:
+    chdir: "{{ repo_base_path }}"
+  register: git_remote
+  changed_when: false
+
+- name: Add remote origin
+  command: git remote add origin "{{ remote_origin }}"
+  args:
+    chdir: "{{ repo_base_path }}"
+  when: "'origin' not in git_remote.stdout"
+

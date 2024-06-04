@@ -1,0 +1,5 @@
+---
+host_config_path: "$HOME/.config"
+dotfiles_config_path: "$HOME/dotfiles/.config"
+host_home_path: "$HOME"
+dotfiles_home_path: "$HOME/dotfiles/home"

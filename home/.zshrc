@@ -20,6 +20,7 @@ ZSH_CUSTOM=$DOTFILES/zsh
 
 plugins=(
   git
+  kubectl
 )
 
 ZSH_THEME="powerlevel10k/powerlevel10k"

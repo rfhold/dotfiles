@@ -1,4 +1,5 @@
 return {
+	require("plugins.copilot"),
 	require("plugins.which-key"),
 	require("plugins.cpm"),
 	require("plugins.harpoon"),
@@ -18,4 +19,5 @@ return {
 	require("plugins.telescope"),
 	require("plugins.lsp"),
 	require("plugins.gitsigns"),
+	require("plugins.comments"),
 }
