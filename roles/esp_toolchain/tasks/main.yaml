@@ -1,0 +1,28 @@
+---
+- name: Darwin setup
+  import_tasks: darwin.yaml
+  when: ansible_os_family == 'Darwin'
+
+- name: Debian setup
+  import_tasks: debian.yaml
+  when: ansible_os_family == 'Debian'
+
+- name: Make esp_directory
+  file:
+    path: "{{ esp_directory }}"
+    state: directory
+
+- name: clone esp-idf
+  git:
+    repo: "https://github.com/espressif/esp-idf.git"
+    dest: "{{ esp_directory }}/esp-idf"
+    version: "{{ esp_idf_version }}"
+    update: true
+
+- name: install targets
+  command: "{{ esp_directory }}/esp-idf/install.sh {{ esp_targets }}"
+  args:
+    chdir: "{{ esp_directory }}/esp-idf"
+  register: install_targets
+  changed_when: false
+

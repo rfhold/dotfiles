@@ -1,0 +1,20 @@
+---
+- name: Ensure installed formula
+  community.general.homebrew:
+    name: "{{ item.name }}"
+    state: present
+  loop: "{{ formula }}"
+  register: _alias_vc_0
+  async: 60
+  poll: 0
+
+- name: Wait for formula to install
+  async_status:
+    jid: "{{ item.ansible_job_id }}" # ansible version > 2.8
+  register: _jobs_alias_vc_0
+  retries: 20
+  delay: 2
+  until: _jobs_alias_vc_0.finished
+  loop: "{{_alias_vc_0.results}}"
+  ignore_errors: true
+
