@@ -10,8 +10,10 @@ formula:
   - name: tmux
   - name: gdu
   - name: tako8ki/tap/gobang
+    tap: tako8ki/tap
   - name: lazydocker
   - name: idoavrah/homebrew/tftui
+    tap: idoavrah/homebrew
   - name: tree-sitter
   # Cli
   - name: jq
@@ -36,14 +38,18 @@ formula:
   - name: gh
   - name: git
   # Devops
-  - name: pulumi
+  - name: pulumi/tap/pulumi
+    tap: pulumi/tap
   - name: tfenv
+  - name: tofuutils/tap/tofuenv
+    tap: tofuutils/tap
   - name: ansible
   # SDK
   - name: nvm
   - name: rustup
   - name: golang
   - name: oven-sh/bun/bun
+    tap: oven-sh/bun
 base_repository_path: "$HOME"
 git_repositories:
   'rfhold/docs':

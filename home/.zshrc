@@ -16,7 +16,7 @@ HIST_STAMPS="dd/mm/yyyy"
 export HISTIGNORE="pwd:ls:cd"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$DOTFILES/zsh
+ZSH_CUSTOM=$XDG_CONFIG_HOME/zsh
 
 plugins=(
   git
