@@ -28,4 +28,6 @@ else
   git clone --recursive https://gitlab.com/rfhold/dotfiles
 fi
 
-ansible-playbook ~/dotfiles/playbooks/setup-dev-machine.yaml
+cd ~/dotfiles
+
+ansible-playbook playbooks/setup-dev-machine.yaml
