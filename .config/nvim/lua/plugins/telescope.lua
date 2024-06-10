@@ -6,6 +6,12 @@ return {
 	},
 	config = function()
 		require("telescope").setup({
+			pickers = {
+				find_files = {
+					file_ignore_patterns = { ".git/" },
+					hidden = true,
+				},
+			},
 			extensions = {
 				fzf = {},
 				wrap_results = true,

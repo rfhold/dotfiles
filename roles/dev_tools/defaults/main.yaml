@@ -50,6 +50,13 @@ formula:
   - name: golang
   - name: oven-sh/bun/bun
     tap: oven-sh/bun
+  # Yubikey
+  - name: gnupg2
+  - name: paperkey
+  # - name: yubikey-personalization
+  # - name: hopenpgp-tools
+  # - name: pinentry-mac
+  # - name: ykman
 base_repository_path: "$HOME"
 git_repositories:
   'rfhold/docs':

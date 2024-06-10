@@ -4,36 +4,9 @@
     name: "{{ item.tap }}"
   loop: "{{ formula }}"
   when: item.tap is defined
-  register: _alias_vc_0
-  async: 60
-  poll: 0
-
-- name: Wait for tap to complete
-  async_status:
-    jid: "{{ item.ansible_job_id }}"
-  register: _jobs_alias_vc_0
-  retries: 20
-  delay: 2
-  until: _jobs_alias_vc_0.finished
-  loop: "{{_alias_vc_0.results}}"
-  when: item.ansible_job_id is defined
-  ignore_errors: true
 
 - name: Ensure installed formula
   community.general.homebrew:
     name: "{{ item.name }}"
     state: present
   loop: "{{ formula }}"
-  register: _alias_vc_1
-  async: 60
-  poll: 0
-
-- name: Wait for formula to install
-  async_status:
-    jid: "{{ item.ansible_job_id }}"
-  register: _jobs_alias_vc_1
-  retries: 20
-  delay: 2
-  until: _jobs_alias_vc_1.finished
-  loop: "{{_alias_vc_1.results}}"
-  ignore_errors: true

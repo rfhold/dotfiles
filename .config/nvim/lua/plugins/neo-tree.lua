@@ -9,31 +9,25 @@ return {
 	},
 	config = function()
 		require("neo-tree").setup({
-			close_if_last_window = false,
-			event_handlers = {
-				{
-					event = "file_opened",
-					handler = function(_)
-						require("neo-tree.command").execute({ action = "close" })
-					end,
+			filesystem = {
+				filtered_items = {
+					visible = false,
+					hide_dotfiles = false,
+					hide_gitignored = false,
+					hide_by_name = { -- uses exact filenames
+						".git",
+					},
+					never_show = {
+						".DS_Store",
+					},
 				},
 			},
+			close_if_last_window = false,
 		})
 	end,
 	cmd = "NeoTree float",
 	keys = {
-		{ "\\\\", ":Neotree reveal<CR>", { desc = "NeoTree reveal" } },
-	},
-	opts = {
-		filesystem = {
-			filtered_items = {
-				visible = false,
-				hide_dotfiles = false,
-				hide_gitignored = false,
-				never_show = { -- uses exact filenames
-					".git",
-				},
-			},
-		},
+		{ "\\\\", ":Neotree reveal current<CR>", { desc = "NeoTree reveal" } },
+		{ "<leader>gs", ":Neotree float git_status<CR>", { desc = "NeoTree git_status" } },
 	},
 }

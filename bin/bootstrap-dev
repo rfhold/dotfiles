@@ -22,12 +22,14 @@ fi
 # Check if dotfiles repo is cloned
 
 if [ -d "$HOME/dotfiles" ]; then
-  echo "Dotfiles repo found"
+  echo "Dotfiles repo found, Updating..."
+  cd $HOME/dotfiles
+  git pull
 else
   echo "Cloning dotfiles repo..."
   git clone --recursive https://gitlab.com/rfhold/dotfiles
 fi
 
-cd ~/dotfiles
+cd $HOME/dotfiles
 
 ansible-playbook playbooks/setup-dev-machine.yaml
