@@ -10,17 +10,6 @@ return {
 			"hrsh7th/cmp-buffer",
 			{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
 			"saadparwaiz1/cmp_luasnip",
-			{
-				"zbirenbaum/copilot-cmp",
-				dependencies = {
-					"zbirenbaum/copilot.lua",
-				},
-				opts = {},
-				config = function(_, opts)
-					local copilot_cmp = require("copilot_cmp")
-					copilot_cmp.setup(opts)
-				end,
-			},
 		},
 		config = function()
 			vim.opt.completeopt = { "menu", "menuone", "noselect" }
@@ -36,7 +25,10 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "path" },
 					{ name = "buffer" },
-					{ name = "copilot" },
+				},
+				window = {
+					completion = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered(),
 				},
 				mapping = {
 					["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),

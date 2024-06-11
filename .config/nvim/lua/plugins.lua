@@ -1,7 +1,7 @@
 return {
 	require("plugins.copilot"),
 	require("plugins.which-key"),
-	require("plugins.cpm"),
+	require("plugins.cmp"),
 	require("plugins.harpoon"),
 	require("plugins.dap"),
 	require("plugins.neo-tree"),
