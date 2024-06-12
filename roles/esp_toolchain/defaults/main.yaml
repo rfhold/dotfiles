@@ -20,5 +20,5 @@ apt:
   - name: libusb-1.0
 esp_directory: $HOME/esp
 esp_targets: esp32c6,esp32c3,esp32s3
-esp_idf_version: v5.2.2
+esp_idf_version: v5.2.1
 

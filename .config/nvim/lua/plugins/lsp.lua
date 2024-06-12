@@ -40,6 +40,9 @@ return {
 				-- Probably want to disable formatting for this lang server
 				tsserver = true,
 
+				tflint = true,
+				terraformls = true,
+
 				gopls = {
 					settings = {
 						gopls = {
