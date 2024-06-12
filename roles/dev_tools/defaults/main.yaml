@@ -51,7 +51,7 @@ formula:
   - name: oven-sh/bun/bun
     tap: oven-sh/bun
   # Yubikey
-  - name: gnupg2
+  - name: gnupg
   - name: paperkey
   # - name: yubikey-personalization
   # - name: hopenpgp-tools
