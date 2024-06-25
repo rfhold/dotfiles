@@ -44,6 +44,8 @@ formula:
   - name: tofuutils/tap/tofuenv
     tap: tofuutils/tap
   - name: ansible
+  - name: fluxcd/tap/flux
+    tap: fluxcd/tap
   # SDK
   - name: nvm
   - name: rustup
