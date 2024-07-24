@@ -17,6 +17,7 @@ formula:
   - name: tree-sitter
   # Cli
   - name: jq
+  - name: yq
   - name: rsync
   - name: wget
   - name: curl

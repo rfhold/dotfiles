@@ -12,7 +12,7 @@ opt.ignorecase = true
 
 ----- Personal Preferences -----
 opt.number = true
-opt.relativenumber = true
+-- opt.relativenumber = true
 
 opt.splitbelow = true
 opt.splitright = true
