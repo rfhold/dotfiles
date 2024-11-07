@@ -43,6 +43,9 @@ return {
 				tflint = true,
 				terraformls = true,
 
+				sqls = true,
+				sqlls = true,
+
 				gopls = {
 					settings = {
 						gopls = {
