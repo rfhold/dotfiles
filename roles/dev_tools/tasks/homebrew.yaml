@@ -1,4 +1,8 @@
 ---
+- name: update homebrew
+  community.general.homebrew:
+    update_homebrew: true
+
 - name: Tap all
   community.general.homebrew_tap:
     name: "{{ item.tap }}"
@@ -10,3 +14,8 @@
     name: "{{ item.name }}"
     state: present
   loop: "{{ formula }}"
+
+- name: update all packages
+  community.general.homebrew:
+    upgrade_all: true
+
