@@ -14,6 +14,14 @@
     name: "{{ item.name }}"
     state: present
   loop: "{{ formula }}"
+  when: item.cask is not defined
+
+- name: Ensure installed cask
+  community.general.homebrew_cask:
+    name: "{{ item.name }}"
+    state: present
+  loop: "{{ formula }}"
+  when: item.cask is defined
 
 - name: update all packages
   community.general.homebrew:
