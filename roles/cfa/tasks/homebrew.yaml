@@ -1,0 +1,21 @@
+---
+- name: update homebrew
+  community.general.homebrew:
+    update_homebrew: true
+
+- name: Tap all
+  community.general.homebrew_tap:
+    name: "{{ item.tap }}"
+  loop: "{{ formula }}"
+  when: item.tap is defined
+
+- name: Ensure installed formula
+  community.general.homebrew:
+    name: "{{ item.name }}"
+    state: present
+  loop: "{{ formula }}"
+
+- name: update all packages
+  community.general.homebrew:
+    upgrade_all: true
+

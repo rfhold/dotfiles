@@ -1,0 +1,14 @@
+---
+formula:
+  - name: pulumi/tap/pulumi
+    tap: pulumi/tap
+  - name: golang
+base_repository_path: "$HOME/cfa"
+git_repositories:
+  'hub-ite-digital-ordering-devops':
+    remote_origin: "git@github.com:cfaintl/poc-pulumi-aws.git"
+  'hub-ite-digital-ordering-middleware':
+    remote_origin: "git@github.com:cfaintl/bosphorus-bridge-api.git"
+  'hub-ite-digital-ordering-web':
+    remote_origin: "git@github.com:cfaintl/hub-ite-digital-ordering-web.git"
+
