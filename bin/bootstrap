@@ -25,11 +25,12 @@ if [ ! -d ~/dotfiles ]; then
 		git clone --recursive $HTTP_DOTFILES_URL $HOME/dotfiles
 fi
 
+cd $HOME/dotfiles
+
 # Run Ansible playbook
-ansible-playbook $HOME/dotfiles/playbooks/setup-dev-machine.yaml
+ansible-playbook playbooks/setup-dev-machine.yaml
 
 # Switch to ssh for Dotfiles
-cd $HOME/dotfiles
 CURRENT_URL=$(git remote get-url origin)
 
 if [[ $CURRENT_URL == $HTTP_DOTFILES_URL ]]; then
