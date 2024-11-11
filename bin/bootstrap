@@ -17,11 +17,21 @@ if ! command -v ansible &> /dev/null; then
     brew install ansible
 fi
 
+HTTP_DOTFILES_URL="https://github.com/RFHold/dotfiles.git"
+SSH_DOTFILES_URL="git@github.com:RFHold/dotfiles.git"
+
 # Clone dotfiles repository
 if [ ! -d ~/dotfiles ]; then
-		git clone --recursive git@github.com:RFHold/dotfiles.git $HOME/dotfiles
+		git clone --recursive $HTTP_DOTFILES_URL $HOME/dotfiles
 fi
 
 # Run Ansible playbook
 ansible-playbook $HOME/dotfiles/playbooks/setup-dev-machine.yaml
 
+# Switch to ssh for Dotfiles
+cd $HOME/dotfiles
+CURRENT_URL=$(git remote get-url origin)
+
+if [[ $CURRENT_URL == $HTTP_DOTFILES_URL ]]; then
+		git remote set-url origin $SSH_DOTFILES_URL
+fi
