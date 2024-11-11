@@ -3,6 +3,7 @@ formula:
   - name: pulumi/tap/pulumi
     tap: pulumi/tap
   - name: golang
+  - name: okta-aws-cli
 base_repository_path: "$HOME/cfa"
 git_repositories:
   'hub-ite-digital-ordering-devops':
