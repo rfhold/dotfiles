@@ -49,6 +49,7 @@ formula:
   - name: fluxcd/tap/flux
     tap: fluxcd/tap
   # SDK
+  - name: deno
   - name: nvm
   - name: rustup
   - name: golang
