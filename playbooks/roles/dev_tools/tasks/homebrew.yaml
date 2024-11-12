@@ -18,7 +18,7 @@
 
 - name: Ensure installed cask
   community.general.homebrew_cask:
-    name: "{{ item.name }}"
+    name: "{{ item.cask }}"
     state: present
   loop: "{{ formula }}"
   when: item.cask is defined

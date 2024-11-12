@@ -39,10 +39,10 @@ index = 17
 color = '#db4b4b'
 
 [font]
-normal.family = "MesloLGS NF"
-bold.family = "MesloLGS NF"
-italic.family = "MesloLGS NF"
-bold_italic.family = "MesloLGS NF"
+normal.family = "Hack Nerd Font"
+bold.family = "Hack Nerd Font"
+italic.family = "Hack Nerd Font"
+bold_italic.family = "Hack Nerd Font"
 
 size = 15.0
 

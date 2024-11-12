@@ -36,3 +36,8 @@ CURRENT_URL=$(git remote get-url origin)
 if [[ $CURRENT_URL == $HTTP_DOTFILES_URL ]]; then
 		git remote set-url origin $SSH_DOTFILES_URL
 fi
+
+# Install lts node
+if ! command -v node &> /dev/null; then
+		nvm install --lts
+fi

@@ -1,6 +1,10 @@
 ---
 formula:
   # Terminal
+  - name: zsh
+  - name: zsh-syntax-highlighting
+  - name: zsh-autosuggestions
+  - name: starship
   - name: homebrew/cask/alacritty
   - name: lazydocker
   - name: neovim
@@ -15,6 +19,7 @@ formula:
   - name: idoavrah/homebrew/tftui
     tap: idoavrah/homebrew
   - name: tree-sitter
+  - cask: font-hack-nerd-font
   # Cli
   - name: jq
   - name: yq
@@ -55,13 +60,10 @@ formula:
   - name: golang
   - name: oven-sh/bun/bun
     tap: oven-sh/bun
-  # Yubikey
-  - name: gnupg
-  - name: paperkey
-  # - name: yubikey-personalization
-  # - name: hopenpgp-tools
-  # - name: pinentry-mac
-  # - name: ykman
+  # Security
+  - cask: 1password
+  # Web
+  - cask: firefox
 base_repository_path: "$HOME"
 git_repositories:
   'rfhold/dev':

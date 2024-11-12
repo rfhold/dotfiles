@@ -38,7 +38,7 @@ return {
 				cssls = true,
 
 				-- Probably want to disable formatting for this lang server
-				tsserver = true,
+				ts_ls = true,
 
 				tflint = true,
 				terraformls = true,
