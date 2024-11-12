@@ -1,4 +1,3 @@
----
 formula:
   # Terminal
   - name: zsh
@@ -16,12 +15,14 @@ formula:
   - name: tako8ki/tap/gobang
     tap: tako8ki/tap
   - name: lazydocker
+  - name: lazygit
   - name: idoavrah/homebrew/tftui
     tap: idoavrah/homebrew
   - name: tree-sitter
   - cask: font-hack-nerd-font
   # Cli
   - name: jq
+  - name: mage
   - name: yq
   - name: ripgrep
   - name: rsync
@@ -64,6 +65,12 @@ formula:
   - cask: 1password
   # Web
   - cask: firefox
+  # Entertainment
+  - cask: spotify
+  # Communication
+  - cask: slack
+  # Utilities
+  - cask: linearmouse
 base_repository_path: "$HOME"
 git_repositories:
   'rfhold/dev':
