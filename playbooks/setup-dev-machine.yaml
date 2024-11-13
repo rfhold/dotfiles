@@ -3,5 +3,6 @@
   hosts: localhost
   gather_facts: true
   roles:
+    - role: mac
     - role: dotfiles
     - role: dev_tools
