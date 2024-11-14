@@ -10,5 +10,6 @@
         signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGGBlbLdkqE4FisaAfYJbj6RiyCWxoxoz3REPF9By6xT
 [core]
         editor = vim
+	excludesfile = ~/.gitignore
 [safe]
 	directory = /Users/robert/armbian/build
