@@ -33,8 +33,11 @@ formula:
   - name: lsd
   - name: bat
   # Containers
+  - name: qemu
   - name: colima
-  - name: homebrew/core/docker
+  - name: docker
+  - name: docker-compose
+  - name: docker-buildx
   - name: helm
   - name: kind
   - name: kubernetes-cli
