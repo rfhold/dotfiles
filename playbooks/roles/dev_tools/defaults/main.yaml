@@ -14,6 +14,8 @@ formula:
   - name: gdu
   - name: tako8ki/tap/gobang
     tap: tako8ki/tap
+  - name: jorgerojas26/lazysql/lazysql
+    tap: jorgerojas26/lazysql
   - name: lazydocker
   - name: lazygit
   - name: idoavrah/homebrew/tftui
@@ -57,6 +59,8 @@ formula:
   - name: ansible
   - name: fluxcd/tap/flux
     tap: fluxcd/tap
+  - name: wireguard-tools
+  - name: telnet
   # SDK
   - name: deno
   - name: nvm
@@ -65,7 +69,7 @@ formula:
   - name: oven-sh/bun/bun
     tap: oven-sh/bun
   # Security
-  - cask: 1password
+  - cask: bitwarden
   # Web
   - cask: firefox
   # Entertainment
@@ -74,7 +78,18 @@ formula:
   - cask: slack
   # Utilities
   - cask: linearmouse
+  # SBC Tools
+  - name: balenaetcher
+  - name: pkgconfig
+  - name: libusb
+  # Gpg
+  - name: gnupg
+  - name: pinentry-mac
+  - name: yubikey-personalization
+  - name: ykman
 base_repository_path: "$HOME"
 git_repositories:
   'rfhold/dev':
     remote_origin: "git@github.com:rfhold/dev.git"
+  'raspberrypi/usbboot':
+    remote_origin: "git@github.com:raspberrypi/usbboot.git"

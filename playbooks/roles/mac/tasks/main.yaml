@@ -10,3 +10,15 @@
     defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
   args:
     executable: /bin/bash
+- name: Auto Hide Dock
+  shell: |
+    defaults write com.apple.dock autohide -bool true
+    defaults write com.apple.dock autohide-delay -float 0
+    defaults write com.apple.dock autohide-time-modifier -float 0
+  args:
+    executable: /bin/bash
+- name: Enable key autorepeat
+  shell: |
+    defaults write -g ApplePressAndHoldEnabled -bool false
+  args:
+    executable: /bin/bash

@@ -1,0 +1,3 @@
+#! /bin/bash
+
+AWS_PROFILE=remus-minio pulumi login 's3://pulumi-state?region=us-east-1&endpoint=https://api-dev-objects.holdenitdown.net&s3ForcePathStyle=true'
