@@ -7,6 +7,12 @@ return {
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 
+			-- LSP UI
+			"aznhe21/actions-preview.nvim",
+
+			-- Telescope for references
+			"nvim-telescope/telescope.nvim",
+
 			{ "j-hui/fidget.nvim", opts = {} },
 
 			-- Autoformatting
@@ -116,38 +122,30 @@ return {
 				lua = true,
 			}
 
-			local floating_window_handler = function(fn)
-				return function()
-					local opts = {
-						border = "single",
-						focusable = true,
-						width = 80,
-						height = 20,
-						row = 1,
-						col = 1,
-					}
-					local bufnr = fn()
-					if bufnr then
-						vim.api.nvim_win_set_config(0, opts)
-					end
-				end
-			end
+			vim.diagnostic.config({
+				float = { border = "rounded" },
+			})
+
+			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				callback = function(args)
 					local bufnr = args.buf
 					local client = assert(vim.lsp.get_client_by_id(args.data.client_id), "must have valid client")
 
+					telescope = require("telescope.builtin")
+
 					vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
-					vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
-					vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = 0 })
-					vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = 0 })
+					vim.keymap.set("n", "gd", telescope.lsp_definitions, { buffer = 0 })
+					vim.keymap.set("n", "gi", telescope.lsp_implementations, { buffer = 0 })
+					vim.keymap.set("n", "gr", telescope.lsp_references, { buffer = 0 })
 					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
 					vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
 					vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
+					vim.keymap.set("n", "J", vim.diagnostic.open_float, { buffer = 0 })
 
-					vim.keymap.set("n", "<space>cr", floating_window_handler(vim.lsp.buf.rename), { buffer = 0 })
-					vim.keymap.set("n", "<space>ca", floating_window_handler(vim.lsp.buf.code_action), { buffer = 0 })
+					vim.keymap.set("n", "<space>cr", vim.lsp.buf.rename, { buffer = 0 })
+					vim.keymap.set("n", "<space>ca", require("actions-preview").code_actions, { buffer = 0 })
 
 					local filetype = vim.bo[bufnr].filetype
 					if disable_semantic_tokens[filetype] then
