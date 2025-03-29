@@ -32,6 +32,9 @@ eval "$(starship init zsh)"
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Enable auto suggestions one word at a time
+bindkey '^ ' forward-word
+
 # Add directories to the PATH and prevent to add the same directory multiple times upon shell reload.
 add_to_path() {
   if [[ -d "$1" ]] && [[ ":$PATH:" != *":$1:"* ]]; then
@@ -45,4 +48,13 @@ add_to_path "$DOTFILES/bin"
 add_to_path "$HOME/go/bin"
 add_to_path "$HOME/.cargo/bin"
 
+alias rdns="sudo killall -HUP mDNSResponder && echo macOS DNS Cache Reset"
+
 export DOCKER_HOST="unix:///${HOME}/.config/colima/default/docker.sock"
+export TESTCONTAINERS_HOST_OVERRIDE=127.0.0.1
+# export TESTCONTAINERS_RYUK_DISABLED=true
+
+export GOPRIVATE=github.com/cfaintl
+
+alias export-openai="export OPENAI_API_KEY=\$(gpg --decrypt ~/.openaikey.asc)"
+

@@ -11,3 +11,9 @@
 	excludesfile = ~/.gitignore
 [safe]
 	directory = /Users/robert/armbian/build
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
+[gpg]
+	program = /opt/homebrew/bin/gpg

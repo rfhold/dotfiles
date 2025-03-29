@@ -64,7 +64,7 @@ formula:
   # SDK
   - name: deno
   - name: nvm
-  - name: rustup
+  - name: rust
   - name: golang
   - name: oven-sh/bun/bun
     tap: oven-sh/bun
@@ -78,6 +78,8 @@ formula:
   - cask: slack
   # Utilities
   - cask: linearmouse
+  # Organization
+  - cask: obsidian
   # SBC Tools
   - name: balenaetcher
   - name: pkgconfig
