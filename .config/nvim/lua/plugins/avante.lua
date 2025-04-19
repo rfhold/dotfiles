@@ -8,12 +8,37 @@ return {
 		provider = "openai",
 		openai = {
 			endpoint = "https://api.openai.com/v1",
-			model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
+			model = "o4-mini", -- your desired model (or use gpt-4o, etc.)
 			timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
 			-- temperature = 0,
-			max_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
+			max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
 			-- reasoning_effort = "low", -- low|medium|high, only used for reasoning models
 		},
+		disabled_tools = {
+			"list_files",
+			"search_files",
+			"read_file",
+			"create_file",
+			"rename_file",
+			"delete_file",
+			"create_dir",
+			"rename_dir",
+			"delete_dir",
+			"python",
+			"bash",
+		},
+		-- system_prompt as function ensures LLM always has latest MCP server state
+		-- This is evaluated for every message, even in existing chats
+		system_prompt = function()
+			local hub = require("mcphub").get_hub_instance()
+			return hub:get_active_servers_prompt()
+		end,
+		-- Using function prevents requiring mcphub before it's loaded
+		custom_tools = function()
+			return {
+				require("mcphub.extensions.avante").mcp_tool(),
+			}
+		end,
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 	build = "make",

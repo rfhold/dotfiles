@@ -1,0 +1,63 @@
+{
+  "mcpServers": {
+    "github": {
+      "disabled": true,
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ]
+    },
+    "filesystem": {
+      "disabled_tools": [
+        
+      ],
+      "disabled": false,
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/rfhold/.config/.mcphub",
+        "/Users/rfhold/dotfiles",
+        "/Users/rfhold/stablekernel",
+        "/Users/rfhold/cfa",
+        "/Users/rfhold/rfhold"
+      ]
+    },
+    "vibe": {
+      "command": "mcp-vibe",
+      "disabled": false
+    },
+    "searxng": {
+      "env": {
+        "SEARXNG_URL": "https://search.holdenitdown.net"
+      },
+      "disabled": true,
+      "command": "uvenv",
+      "args": [
+        "run",
+        "mcp-searxng"
+      ]
+    }
+  },
+  "nativeMCPServers": {
+    "mcphub": {
+      "disabled_resources": [
+        
+      ]
+    },
+    "neovim": {
+      "disabled_resources": [
+        
+      ],
+      "disabled": false,
+      "custom_instructions": {
+        "text": "",
+        "disabled": false
+      },
+      "disabled_tools": [
+        
+      ]
+    }
+  }
+}

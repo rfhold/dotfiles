@@ -45,8 +45,10 @@ add_to_path() {
 # Load dotfiles binaries
 add_to_path "$DOTFILES/bin"
 
-add_to_path "$HOME/go/bin"
+export GOPATH=$HOME/go
+add_to_path "$GOPATH/bin"
 add_to_path "$HOME/.cargo/bin"
+add_to_path "$HOME/.local/bin"
 
 alias rdns="sudo killall -HUP mDNSResponder && echo macOS DNS Cache Reset"
 
